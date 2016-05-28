@@ -9,9 +9,17 @@ with open(os.path.join(thisdir, 'README.rst')) as f:
     kwds['long_description'] = f.read()
 
 
+with open('grin.py') as fp:
+    _locals = {}
+    for line in fp:
+        if line.startswith('__version__'):
+            exec(line, None, _locals)
+            break
+    __version__ = _locals['__version__']
+
 setup(
     name='grin',
-    version='1.2.1+xy2',
+    version=__version__,
     author='Robert Kern',
     author_email='robert.kern@enthought.com',
     description="A grep program configured the way I like it.",

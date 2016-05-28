@@ -26,7 +26,7 @@ def int2bytes(ints):
 
 
 #### Constants ####
-__version__ = '1.2.1+xy1'
+__version__ = '1.2.1+xy2'
 
 # Maintain the numerical order of these constants. We use them for sorting.
 PRE = -1
