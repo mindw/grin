@@ -22,6 +22,9 @@ setup(
     version=__version__,
     author='Robert Kern',
     author_email='robert.kern@enthought.com',
+    maintainer='Gabi Davar',
+    maintainer_email='grizzly.nyo@gmail.com',
+    url='https://github.com/mindw/grin',
     description="A grep program configured the way I like it.",
     license="BSD",
     classifiers=[

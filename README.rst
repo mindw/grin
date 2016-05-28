@@ -213,7 +213,7 @@ Using grin as a Library
 -----------------------
 
 One of the goals I had when writing grin was to be able to use it as a library
-to write custom tools. You can see one example that I quickly hacked up in
+to write custom tools. You can see one example that I quickly hacked up in 
 examples/grinimports.py . It reuses almost all of grin's infrastructure, except
 that it preprocesses Python files to extract and normalize just the import
 statements. This lets you conveniently and robustly search for import
@@ -241,8 +241,9 @@ Similarly, it should be straightforward to write small tools like this which
 extract and search text metadata from binary files.
 
 
-TODO
-----
+To Do
+-----
+
 * Figure out the story for grepping UTF-8, UTF-16 and UTF-32 Unicode text files.
 
 
