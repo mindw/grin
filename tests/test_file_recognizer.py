@@ -186,8 +186,7 @@ def ensure_deletability(arg, dirname, fnames):
     """
     for fn in fnames:
         fn = os.path.join(dirname, fn)
-        if os.path.isdir(fn):
-            os.chmod(fn, 0o700)
+        os.chmod(fn, 0o777)
 
 
 def teardown():
@@ -202,6 +201,15 @@ def teardown():
                        'totally_unusable_dir_link', 'text.skip_ext',
                        'text.dont_skip_ext', 'dir.skip_ext', 'skip_dir',
                        'fake_skip_dir', 'text#', 'foo.bar.baz']
+    os.chmod('unreadable_file', 0o777)
+    os.chmod('unreadable_dir', 0o777)
+    os.chmod('unexecutable_dir', 0o777)
+    os.chmod('totally_unusable_dir', 0o777)
+    os.chmod('tree/unreadable_dir', 0o777)
+    os.chmod('tree/unexecutable_dir', 0o777)
+    os.chmod('tree/totally_unusable_dir', 0o777)
+
+    os.walk('.', ensure_deletability, None)
     for filename in files_to_delete:
         if os.path.exists(filename):
             try:
