@@ -10,13 +10,13 @@ with open(os.path.join(thisdir, 'README.rst')) as f:
 
 
 setup(
-    name = 'grin',
-    version = '1.2.1+xy1',
-    author = 'Robert Kern',
-    author_email = 'robert.kern@enthought.com',
-    description = "A grep program configured the way I like it.",
-    license = "BSD",
-    classifiers = [
+    name='grin',
+    version='1.2.1+xy1',
+    author='Robert Kern',
+    author_email='robert.kern@enthought.com',
+    description="A grep program configured the way I like it.",
+    license="BSD",
+    classifiers=[
         "License :: OSI Approved :: BSD License",
         "Development Status :: 5 - Production/Stable",
         "Environment :: Console",
@@ -26,21 +26,23 @@ setup(
         "Topic :: Utilities",
     ],
 
-    py_modules = ["grin"],
-    entry_points = dict(
-        console_scripts = [
+    py_modules=["grin"],
+    entry_points=dict(
+        console_scripts=[
             "grin = grin:grin_main",
             "grind = grin:grind_main",
         ],
     ),
-    install_requires = [
+    install_requires=[
         'six>=1.6',
         'colorama>=0.3',
-        'argparse >= 1.1',
     ],
-    tests_require = [
+    extras_require={
+        ':python_version == "2.6"': ['argparse>=1.1'],
+    },
+    tests_require=[
         'nose >= 0.10',
     ],
-    test_suite = 'nose.collector',
+    test_suite='nose.collector',
     **kwds
 )
