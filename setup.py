@@ -11,7 +11,7 @@ with open(os.path.join(thisdir, 'README.rst')) as f:
 
 setup(
     name='grin',
-    version='1.2.1+xy1',
+    version='1.2.1+xy2',
     author='Robert Kern',
     author_email='robert.kern@enthought.com',
     description="A grep program configured the way I like it.",
