@@ -5,7 +5,7 @@
 
 import compiler
 from compiler.visitor import ASTVisitor, walk
-from cStringIO import StringIO
+from six.moves import StringIO
 import os
 import shlex
 import sys

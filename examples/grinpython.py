@@ -3,7 +3,7 @@
 """ Transform Python code by omitting strings, comments, and/or code.
 """
 
-from cStringIO import StringIO
+from six.moves import StringIO
 import os
 import shlex
 import string
